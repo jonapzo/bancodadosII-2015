@@ -11,8 +11,8 @@ public class AgregacaoTest extends BaseTest {
 
 	@Test
 	public void testCount() throws SQLException {
-		ResultSet resultSet = connection.createStatement().executeQuery("SELECT COUNT(*) FROM customers");
+		ResultSet resultSet = connection.createStatement().executeQuery("SELECT COUNT(*) FROM items");
 		resultSet.next();
-		assertEquals(50, resultSet.getInt(1));
+		assertEquals(650, resultSet.getInt(1));
 	}
 }
