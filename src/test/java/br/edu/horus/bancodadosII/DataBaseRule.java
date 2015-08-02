@@ -28,19 +28,32 @@ public class DataBaseRule implements TestRule {
 	public Statement apply(final Statement base, final Description description) {
 		try {
 			final Connection connection = DriverManager.getConnection(url, user, password);
+			connection.setAutoCommit(false);
 			final java.sql.Statement statement = connection.createStatement();
-			final String sql = read();
-			statement.executeQuery(sql);
+			final String schema = schema();
+			statement.executeQuery(schema);
+			connection.commit();
+			final String data = data();
+			statement.executeQuery(data);
+			connection.commit();
 		} catch (final SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 		return base;
 	}
+	
+	private String schema(){
+		return read("src/test/resources/schema.sql");
+	}
+	
+	private String data(){
+		return read("src/test/resources/data.sql");
+	}
 
 	
-	private String read(){
-		final Path path = new File("src/test/resources/sakila-schema.sql").toPath();
+	private String read(final String file){
+		final Path path = new File(file).toPath();
 		final byte[] bytes;
 		try {
 			bytes = Files.readAllBytes(path);
