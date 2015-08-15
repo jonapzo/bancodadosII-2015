@@ -805,4 +805,4 @@ INSERT INTO items VALUES(650,49,0,18,6,1.5);
 
 UPDATE products SET price=ROUND(price*.1,2);
 UPDATE items SET cost=cost*(SELECT price FROM products WHERE product_id=products.id);
-UPDATE invoices SET total=SELECT SUM(cost*quantity) FROM items WHERE invoice_id=invoices.id;
+UPDATE invoices SET total=(SELECT SUM(cost*quantity) FROM items WHERE invoice_id=invoices.id);
