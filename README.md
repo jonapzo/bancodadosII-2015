@@ -10,6 +10,7 @@ No primeiro build, algumas bibliotecas serão baixadas, entre eles, o HSQLDB, um
 embutido que não necessita ser instalado.
 
 O projeto é uma estrutura padrão do Maven, segue uma explicação mais detalhada.
+```
 .
 ├── LICENSE
 ├── pom.xml
@@ -21,10 +22,11 @@ O projeto é uma estrutura padrão do Maven, segue uma explicação mais detalha
 │       │       └── edu
 │       │           └── horus
 │       │               └── bancodadosII
-│       │                   ├── AgregacaoTest.java
-│       │                   ├── BaseTest.java
-│       │                   ├── ConnectionRule.java
-│       │                   └── DataBaseRule.java
+│       │                   ├── AgregacaoTest.java // Exemplo de agregação
+│       │                   ├── BaseTest.java //Classe base para os testes
+│       │                   ├── ConnectionRule.java //Rule Junit para conexão
+│       │                   └── DataBaseRule.java  //Rule Junit para criar a Base de Dados
 │       └── resources
-│           ├── data.sql 
-│           └── schema.sql
+│           ├── data.sql //Arquivo com a estrutura do Banco de Dados
+│           └── schema.sql //Arquivo com os dados do Banco de Dados
+```
