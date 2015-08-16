@@ -9,7 +9,7 @@ import org.junit.Rule;
 public class BaseTest {
 	private static final String user = "sa";
 	private static final String password = "";
-	private static final String url = "jdbc:hsqldb:file:target/sample";
+	private static final String url = "jdbc:hsqldb:file:target/sample;hsqldb.lock_file=false";
 
 	@ClassRule
 	public static DataBaseRule databaseRule = new DataBaseRule(user, password, url);
