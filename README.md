@@ -10,11 +10,11 @@ No primeiro build, algumas bibliotecas serão baixadas, entre eles, o HSQLDB, um
 embutido que não necessita ser instalado.
 
 O projeto é uma estrutura padrão do Maven, segue uma explicação mais detalhada.
-```
+```java
 .
 ├── LICENSE
-├── pom.xml
-├── README.md
+├── pom.xml //Arquivo que contém as configuração do Maven
+├── README.md //esse arquivo
 ├── src
 │   └── test
 │       ├── java
