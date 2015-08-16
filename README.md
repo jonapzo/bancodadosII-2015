@@ -15,6 +15,8 @@ O projeto é uma estrutura padrão do Maven, segue uma explicação mais detalha
 ├── LICENSE
 ├── pom.xml //Arquivo que contém as configuração do Maven
 ├── README.md //esse arquivo
+├── sample.png //Imagem Modelo ER banco dados
+├── sample.asta //Projeto Ferramente Astah
 ├── src
 │   └── test
 │       ├── java
